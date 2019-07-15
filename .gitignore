@@ -1,0 +1,15 @@
+# compiled output
+/dist
+
+# dependencies
+/node_modules
+
+**/.DS_Store
+.vscode
+
+# modules_lock
+yarn.lock
+package-lock.json
+
+/.idea
+caih-cloud-ui.iml
