@@ -1,3 +1,6 @@
+/* eslint no-undef: "off" */
+/* eslint no-console: "off" */
+
 const http = require('http');
 const path = require('path');
 const express = require('express');
@@ -22,7 +25,7 @@ app.use('/dist/', express.static(publicDir));
 // app.use('/api', proxy({ target: config.apiHost, changeOrigin: true, logLevel: 'debug' }));
 
 
-app.use(function (req, res) {
+app.use(function(req, res) {
     res.sendFile('dist/index.html', { root: __dirname });
 });
 

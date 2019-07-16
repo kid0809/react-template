@@ -25,10 +25,10 @@ module.exports = {
         "camelcase": [1, {"properties": "always"}],
         "no-unused-vars": 0,
         "no-trailing-spaces": 2, // 禁用尾行空白
-        "key-spacing": 1, // 要求冒号后面有空格
-        "keyword-spacing": 1, // 在关键字前后有空格
+        "key-spacing": 2, // 要求冒号后面有空格
+        "keyword-spacing": 2, // 在关键字前后有空格
         "comma-dangle": ["error", "never"], // 禁用拖尾逗号
-        "comma-spacing": 1, // 要求逗号后有空格
+        "comma-spacing": 2, // 要求逗号后有空格
         "space-infix-ops": ["error", {"int32Hint": true}], // 要求操作符有空格
         "object-curly-spacing": [1, 'always'], // 花括号中使用一致的空格
         "brace-style": [1, "1tbs", { "allowSingleLine": true }], // 大括号放在控制语句或声明语句同一行的位置

@@ -13,3 +13,6 @@ package-lock.json
 
 /.idea
 caih-cloud-ui.iml
+
+# eslint缓存
+/.eslintcache
