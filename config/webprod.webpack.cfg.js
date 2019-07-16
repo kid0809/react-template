@@ -1,6 +1,7 @@
 /* global __dirname */
 const path = require('path');
 const webpack = require('webpack');
+const Fiber = require('fibers');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
@@ -37,8 +38,13 @@ module.exports = {
                     MiniCssExtractPlugin.loader,
                     'css-loader',
                     'postcss-loader',
-                    'sass-loader',
                     {
+                        loader: 'sass-loader',
+                        options: {
+                            implementation: require('sass'), // 使用dart-sass去编译
+                            fiber: Fiber // 同步的库，使用dart-sass同步编译的速度是异步编译的2倍
+                        }
+                    }, {
                         loader: 'sass-resources-loader', // 全局scss变量插件
                         options: {
                             resources: path.join(__dirname, './variable.scss')

@@ -1,15 +1,13 @@
-import Loadable from 'react-loadable';
-import Loading from '../components/basic/Loading';
+import { lazy } from 'react';
 
-const HomeComponent = Loadable({
-    loader: () => import(/* webpackChunkName: 'Home' */ '../components/business/Home'),
-    loading: Loading
-});
 
-const AboutComponent = Loadable({
-    loader: () => import(/* webpackChunkName: 'About' */ '../components/business/About'),
-    loading: Loading
-});
+const HomeComponent = lazy(() =>
+    import(/* webpackChunkName: 'Home' */ '../components/business/Home')
+);
+
+const AboutComponent = lazy(() =>
+    import(/* webpackChunkName: 'About' */ '../components/business/About')
+);
 
 const routes = [{
     key: 'home',
