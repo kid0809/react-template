@@ -10,7 +10,6 @@ module.exports = function(api) {
     ];
     const plugins = [
         "react-hot-loader/babel",
-        "@babel/plugin-syntax-dynamic-import", // 动态import加载组件
         "@babel/plugin-proposal-class-properties", // class的方法可以用箭头函数自动bind this
         "@babel/plugin-transform-runtime"
     ];

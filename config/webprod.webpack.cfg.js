@@ -47,7 +47,7 @@ module.exports = {
                     }, {
                         loader: 'sass-resources-loader', // 全局scss变量插件
                         options: {
-                            resources: path.join(__dirname, './variable.scss')
+                            resources: path.join(__dirname, '../src/styles/variable.scss')
                         }
                     }
                 ]
@@ -96,29 +96,6 @@ module.exports = {
         // new BundleAnalyzerPlugin()
     ],
     optimization: {
-        splitChunks: {
-            cacheGroups: {
-                vendors: {
-                    test: /(react|react-dom|react-dom-router|axios|moment)/,
-                    name: 'vendor',
-                    priority: 100,
-                    chunks: 'all'
-                },
-                'async-commons': {  // 异步加载公共包、组件等
-                    chunks: 'async',
-                    minChunks: 2,
-                    name: 'async-commons',
-                    priority: 90
-                },
-                commons: { // 其他同步加载公共包
-                    chunks: 'all',
-                    minChunks: 2,
-                    name: 'commons',
-                    priority: 80
-                }
-            }
-        },
-        runtimeChunk: 'single',
         minimizer: [
             // 压缩js
             new TerserPlugin({

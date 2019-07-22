@@ -39,7 +39,7 @@ module.exports = {
                     }, {
                         loader: 'sass-resources-loader', // 全局scss变量插件
                         options: {
-                            resources: path.join(__dirname, './variable.scss')
+                            resources: path.join(__dirname, '../src/styles/variable.scss')
                         }
                     }
                 ]
