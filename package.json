@@ -3,8 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "browserslist": [
-    "> 1%",
-    "ie 11"
+    "> 1%"
   ],
   "scripts": {
     "dev": "webpack-dev-server --config ./config/webdev.webpack.cfg.js --open --hot",
@@ -35,7 +34,8 @@
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
     "react-router-dom": "^5.0.1",
-    "regenerator-runtime": "^0.13.2"
+    "regenerator-runtime": "^0.13.2",
+    "vconsole": "^3.3.2"
   },
   "devDependencies": {
     "@babel/core": "^7.5.4",
@@ -61,6 +61,8 @@
     "mini-css-extract-plugin": "^0.7.0",
     "optimize-css-assets-webpack-plugin": "^5.0.3",
     "postcss-loader": "^3.0.0",
+    "postcss-px-to-viewport": "^1.1.1",
+    "postcss-write-svg": "^3.0.1",
     "prettier": "^1.18.2",
     "react-hot-loader": "^4.12.6",
     "sass": "^1.22.5",
