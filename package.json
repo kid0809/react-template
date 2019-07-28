@@ -3,8 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "browserslist": [
-    "> 1%",
-    "ie 11"
+    "ie 8-11"
   ],
   "scripts": {
     "dev": "webpack-dev-server --config ./config/webdev.webpack.cfg.js --open --hot",
@@ -32,14 +31,15 @@
     "core-js": "^3.1.4",
     "express": "^4.17.1",
     "http-proxy-middleware": "^0.19.1",
-    "react": "^16.8.6",
-    "react-dom": "^16.8.6",
-    "react-router-dom": "^5.0.1",
+    "react": "0.14.6",
+    "react-dom": "0.14.6",
+    "react-router": "2.0.1",
     "regenerator-runtime": "^0.13.2"
   },
   "devDependencies": {
     "@babel/core": "^7.5.4",
     "@babel/plugin-proposal-class-properties": "^7.5.0",
+    "@babel/plugin-transform-modules-commonjs": "^7.5.0",
     "@babel/plugin-transform-runtime": "^7.5.0",
     "@babel/preset-env": "^7.5.4",
     "@babel/preset-react": "^7.0.0",

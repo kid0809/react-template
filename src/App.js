@@ -1,24 +1,18 @@
-import React, { Component } from 'react';
-import { BrowserRouter as Router, Switch } from 'react-router-dom';
-import { hot } from 'react-hot-loader/root';
-import LoginRoute from './routes/LoginRoute';
-import PrivateRoute from './routes/PrivateRoute';
-import Login from './components/business/Login';
-import Dashboard from './components/business/Dashboard';
+import React from 'react';
+import { hashHistory, Router, Route } from 'react-router';
+import Home from './components/business/Home';
+import About from './components/business/About';
 import './styles/main.scss';
 
-
-class App extends Component {
+class App extends React.Component {
     render() {
         return (
-            <Router>
-                <Switch>
-                    <LoginRoute path="/login" component={Login} />
-                    <PrivateRoute path="/" component={Dashboard} />
-                </Switch>
+            <Router history={hashHistory}>
+                <Route path="/home" component={Home} />
+                <Route path="/about" component={About} />
             </Router>
         );
     }
 }
 
-export default hot(App);
+export default App;

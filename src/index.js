@@ -1,7 +1,7 @@
-import "core-js/stable";
-import "regenerator-runtime/runtime";
-import React from 'react';
-import ReactDOM from 'react-dom';
-import App from './App';
+require('core-js/stable');
+require('regenerator-runtime/runtime');
+const React = require('react');
+const ReactDOM = require('react-dom');
+const App = require('./App').default;
 
 ReactDOM.render(<App />, document.getElementById('root'));

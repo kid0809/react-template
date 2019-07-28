@@ -9,7 +9,7 @@ module.exports = function(api) {
         }]
     ];
     const plugins = [
-        "react-hot-loader/babel",
+        "@babel/plugin-transform-modules-commonjs",
         "@babel/plugin-proposal-class-properties", // class的方法可以用箭头函数自动bind this
         "@babel/plugin-transform-runtime"
     ];

@@ -99,7 +99,9 @@ module.exports = {
         minimizer: [
             // 压缩js
             new TerserPlugin({
-                parallel: true
+                terserOptions: {
+                    ie8: true
+                }
             }),
             // 压缩css
             new OptimizeCSSAssetsPlugin({})
