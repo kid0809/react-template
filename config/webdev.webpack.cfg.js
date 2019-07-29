@@ -2,13 +2,14 @@
 const path = require('path');
 const webpack = require('webpack');
 const Fiber = require('fibers');
-const cfg = require('./index');
+const MiniCssExtractPlugin = require("mini-css-extract-plugin");
+
 
 // webpack 配置
 module.exports = {
     mode: 'development',
     entry: {
-        app: ['react-hot-loader/patch', './src/index.js']
+        app: ['./src/index.js']
     },
     output: {
         path: path.join(__dirname, '../dist'), // 出口目录，dist文件
@@ -27,7 +28,7 @@ module.exports = {
             {
                 test: /\.scss$/,
                 use: [
-                    'style-loader',
+                    MiniCssExtractPlugin.loader,
                     'css-loader',
                     'postcss-loader',
                     {
@@ -47,7 +48,7 @@ module.exports = {
             {
                 test: /\.css$/,
                 use: [
-                    'style-loader',
+                    MiniCssExtractPlugin.loader,
                     'css-loader',
                     'postcss-loader'
                 ]
@@ -68,25 +69,14 @@ module.exports = {
         // new BundleAnalyzerPlugin()
         new webpack.DefinePlugin({
             NODE_ENV: JSON.stringify('development')
+        }),
+        new MiniCssExtractPlugin({
+            filename: "css/[name].css",
+            chunkFilename: "css/[name].css"
         })
     ],
     resolve: {
         // 自动补全后缀，注意第一个必须是空字符串,后缀一定以点开头
         extensions: ['.js', '.json', '.css']
-    },
-    devServer: {
-        port: cfg.webport, // 端口
-        host: 'localhost',
-        historyApiFallback: {
-            disableDotRule: true
-        },
-        compress: true
-        // 反代配置
-        // proxy: {
-        //     '/api': {
-        //         target: cfg.apiHost,
-        //         changeOrigin: true
-        //     }
-        // }
     }
 };

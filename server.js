@@ -24,10 +24,27 @@ app.use('/dist/', express.static(publicDir));
 // 反向代理
 // app.use('/api', proxy({ target: config.apiHost, changeOrigin: true, logLevel: 'debug' }));
 
+/**
+ * 判断运行环境,执行不同动作
+ */
+if (env === 'development') {
+    const webpack = require('webpack');
+    const webpackDevMiddleware = require('webpack-dev-middleware');
+    const config = require('./config/webdev.webpack.cfg.js');
+    const compiler = webpack(config);
+    app.use(webpackDevMiddleware(compiler, { noInfo: true, publicPath: config.output.publicPath }));
+}
 
-app.use(function(req, res) {
-    res.sendFile('dist/index.html', { root: __dirname });
-});
+if (env === 'development') {
+    app.use(function (req, res) {
+        res.sendFile('index.html', { root: __dirname });
+    });
+} else {
+    app.use(function (req, res) {
+        res.sendFile('dist/index.html', { root: __dirname });
+    });
+}
+
 
 http.createServer(app).listen(port, (error) => {
     if (error) {
