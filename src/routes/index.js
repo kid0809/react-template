@@ -1,24 +1,37 @@
-import { lazy } from 'react';
+import React from 'react';
+import { Route, IndexRoute } from 'react-router';
+import App from '../App';
+import Login from '../components/business/Login';
+import Dashboard from '../components/business/Dashboard';
+import Home from '../components/business/Home';
+import About from '../components/business/About';
+import { getToken } from '../utils/storage';
 
+function redirectToLogin(nextState, replaceState) {
+    if (!getToken('isLogin')) {
+        replaceState(
+            {
+                nextPathname: nextState.location.pathname
+            },
+            '/login'
+        );
+    }
+}
 
-const HomeComponent = lazy(() =>
-    import(/* webpackChunkName: 'Home' */ '../components/business/Home')
+function redirectToDashboard(nextState, replaceState) {
+    if (getToken('isLogin')) {
+        replaceState(null, '/');
+    }
+}
+
+const routes = (
+    <Route component={App}>
+        <Route path="/login" component={Login} onEnter={redirectToDashboard} />
+        <Route path="/" component={Dashboard} onEnter={redirectToLogin}>
+            <IndexRoute component={Home} />
+            <Route path="about" component={About} />
+        </Route>
+    </Route>
 );
-
-const AboutComponent = lazy(() =>
-    import(/* webpackChunkName: 'About' */ '../components/business/About')
-);
-
-const routes = [{
-    key: 'home',
-    path: '/home',
-    component: HomeComponent,
-    breadcrumbName: '首页'
-}, {
-    key: 'about',
-    path: '/about',
-    component: AboutComponent,
-    breadcrumbName: '关于'
-}];
 
 export default routes;

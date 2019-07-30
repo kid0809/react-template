@@ -1,8 +1,8 @@
 /* global __dirname */
 const path = require('path');
 const webpack = require('webpack');
-const Fiber = require('fibers');
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
+const Fiber = require('fibers');
 
 
 // webpack 配置
@@ -67,9 +67,6 @@ module.exports = {
     },
     plugins: [
         // new BundleAnalyzerPlugin()
-        new webpack.DefinePlugin({
-            NODE_ENV: JSON.stringify('development')
-        }),
         new MiniCssExtractPlugin({
             filename: "css/[name].css",
             chunkFilename: "css/[name].css"

@@ -1,9 +1,7 @@
-import React, { Component } from 'react';
+import React from 'react';
 import Header from '../../basic/Header';
 import Menu from '../../basic/Menu';
 import Footer from '../../basic/Footer';
-import Content from './Content';
-import ErrorBoundary from '../ErrorBoundary';
 import { clearToken } from '../../../utils/storage';
 import './styles.scss';
 
@@ -11,7 +9,7 @@ const menus = [
     {
         key: 'home',
         title: '首页',
-        url: '/home'
+        url: '/'
     },
     {
         key: 'about',
@@ -20,23 +18,21 @@ const menus = [
     }
 ];
 
-class Dashboard extends Component {
+class Dashboard extends React.Component {
     logout = () => {
         clearToken('isLogin');
-        this.props.history.push('/');
+        window.location.reload();
     };
     render() {
         return (
             <div className="dashboard-wrap">
                 <Header logout={this.logout} />
                 <div className="dashboard-main">
-                    <ErrorBoundary>
-                        <Menu menus={menus} />
-                        <div className="dashboard-container">
-                            <Content />
-                            <Footer />
-                        </div>
-                    </ErrorBoundary>
+                    <Menu menus={menus} />
+                    <div className="dashboard-container">
+                        {this.props.children}
+                        <Footer />
+                    </div>
                 </div>
             </div>
         );

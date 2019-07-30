@@ -85,9 +85,6 @@ module.exports = {
             filename: "css/[name].[contenthash].css",
             chunkFilename: "css/[name].[contenthash].css"
         }),
-        new webpack.DefinePlugin({
-            NODE_ENV: JSON.stringify('production')
-        }),
         new CompressionPlugin({
             test: new RegExp(
                 '\\.(js|css)$' // 压缩 js 与 css
@@ -96,6 +93,7 @@ module.exports = {
         // new BundleAnalyzerPlugin()
     ],
     optimization: {
+        minimize: false,
         minimizer: [
             // 压缩js
             new TerserPlugin({
