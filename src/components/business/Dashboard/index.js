@@ -15,6 +15,11 @@ const menus = [
         key: 'about',
         title: '关于页面',
         url: '/about'
+    },
+    {
+        key: 'todo',
+        title: '待办事项',
+        url: '/todo'
     }
 ];
 

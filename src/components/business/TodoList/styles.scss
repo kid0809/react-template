@@ -1,0 +1,20 @@
+.todolist-wrap {
+    padding: 20px 0;
+    .todo-content-wrap {
+        width: 400px;
+        margin: 0 auto;
+    }
+
+    .todo-item {
+        position: relative;
+        margin-top: 10px;
+        width: 100px;
+    }
+
+    .todo-delete-icon {
+        cursor: pointer;
+        position: absolute;
+        right: 2px;
+        top: 2px;
+    }
+}

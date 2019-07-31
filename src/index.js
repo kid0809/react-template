@@ -6,8 +6,8 @@ const React = require('react');
 const ReactDOM = require('react-dom');
 const Router = require('react-router').Router;
 const routes = require('./routes').default;
-const createBrowserHistory = require('history/lib/createBrowserHistory');
-const history = createBrowserHistory();
+const createHashHistory = require('history/lib/createHashHistory');
+const history = createHashHistory();
 ReactDOM.render(
     <Router history={history} routes={routes} />,
     document.getElementById('root')
