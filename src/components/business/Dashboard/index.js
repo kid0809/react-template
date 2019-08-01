@@ -24,17 +24,31 @@ const menus = [
 ];
 
 class Dashboard extends React.Component {
+    constructor(props) {
+        super(props);
+        this.state = {
+            count: 1
+        };
+    }
+
     logout = () => {
         clearToken('isLogin');
         window.location.reload();
     };
+
+    clickHandle = () => {
+        this.state.count += 1;
+        this.setState();
+    };
+
     render() {
         return (
             <div className="dashboard-wrap">
-                <Header logout={this.logout} />
+                <Header logout={this.logout} count={this.state.count} />
                 <div className="dashboard-main">
                     <Menu menus={menus} />
                     <div className="dashboard-container">
+                        <div onClick={this.clickHandle}>click me</div>
                         {this.props.children}
                         <Footer />
                     </div>
