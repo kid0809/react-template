@@ -1,0 +1,42 @@
+.layout1-wrap {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+
+    .layout1-header {
+        height: 40px;
+        line-height: 40px;
+        border-bottom: $border;
+    }
+
+    .layout1-main {
+        flex: 1;
+        display: flex;
+    }
+
+    .layout1-side {
+        flex: 0 0 200px;
+        height: 100%;
+        overflow-y: auto;
+        border-right: $border;
+    }
+
+    .layout1-container {
+        height: 100%;
+        overflow-y: auto;
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+    }
+    
+    .layout1-content {
+        flex: 1;
+    }
+
+    .layout1-footer {
+        height: 40px;
+        line-height: 40px;
+        border-top: $border;
+    }
+}
+
