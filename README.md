@@ -29,7 +29,8 @@ npm start
 │   ├── webdev.webpack.cfg.js // dev下的webpack配置
 │   └── webprod.webpack.cfg.js // prod下的webpack配置
 ├── dist // build 后生成的目录
-├── public //
+├── public // 公共文件夹
+│   ├── lib // 第三方库存放位置
 │   └── template.html // build需要的html模板
 ├── src
 │   ├── components // 组件
@@ -37,9 +38,7 @@ npm start
 │   │    └── business // 业务组件
 │   ├── images // 图片文件夹
 │   ├── routes // 前端路由相关
-│   │    ├── index.js // 前端路由配置
-│   │    ├── LoginRoute.js // 高阶路由组件，拦截作用
-│   │    └── PrivateRoute.js // 高阶路由组件，拦截作用
+│   │    └── index.js // 前端路由配置
 │   ├── styles // 样式文件夹
 │   │    ├── main.scss // 全局样式
 │   │    └── variable.scss // 全局sass变量
