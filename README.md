@@ -41,10 +41,10 @@ npm start
 │   │
 │   ├── images // 图片文件夹
 │   │
-│   ├── routes // 前端路由相关
-│   │    ├── index.js // 前端路由配置
-│   │    ├── LoginRoute.js // 高阶路由组件，拦截作用
-│   │    └── PrivateRoute.js // 高阶路由组件，拦截作用
+│   ├── Routes // 前端路由相关
+│   │    ├── AuthRoute // 高阶路由组件，拦截逻辑
+│   │    ├── index.js // 前端路由根组件
+│   │    └── routes.js // 路由配置文件
 │   │
 │   ├── styles // 样式文件夹
 │   │    ├── main.scss // 全局样式
@@ -56,7 +56,9 @@ npm start
 │   │
 │   ├── App.js // react组件入口
 │   │
-│   └── index.js // 项目入口
+│   ├── index.js // 项目入口
+│   │
+│   └── LayoutContext.js // 布局相关的context
 │
 ├── .dockerignore // docker 忽略文件
 │
