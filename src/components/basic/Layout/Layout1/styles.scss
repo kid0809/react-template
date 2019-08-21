@@ -34,8 +34,10 @@
     }
 
     .layout1-footer {
-        height: 40px;
-        line-height: 40px;
+        flex: 0 0 40px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
         border-top: $border;
     }
 }
