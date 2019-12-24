@@ -1,12 +1,12 @@
 module.exports = function(api) {
     api.cache(true);
     const presets = [
-        "@babel/react",
         ["@babel/env", {
             "modules": false,
             "useBuiltIns": 'usage',
             "corejs": { version: 3, proposals: true }
-        }]
+        }],
+        "@babel/react"
     ];
     const plugins = [
         "react-hot-loader/babel",
