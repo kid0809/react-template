@@ -71,7 +71,6 @@ module.exports = {
         })
     ],
     resolve: {
-        // 自动补全后缀，注意第一个必须是空字符串,后缀一定以点开头
         extensions: ['.js', '.json', '.css'],
         alias: {
             '@root': path.resolve(__dirname, '../'),
