@@ -74,7 +74,8 @@ module.exports = {
         extensions: ['.js', '.json', '.css'],
         alias: {
             '@root': path.resolve(__dirname, '../'),
-            '@src': path.resolve(__dirname, '../', 'src')
+            '@src': path.resolve(__dirname, '../', 'src'),
+            'react-dom': '@hot-loader/react-dom'
         }
     },
     devServer: {
