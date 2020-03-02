@@ -1,13 +1,44 @@
 <!DOCTYPE html>
-<html lang="zh">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>react-web</title>
-</head>
-<body>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>Hello Electron React!</title>
+    <script>
+      (() => {
+        if (
+          typeof process !== 'object' ||
+          (typeof process === 'object' && !process.env.START_HOT)
+        ) {
+          const link = document.createElement('link');
+          link.rel = 'stylesheet';
+          link.href = './dist/main.css';
+          // HACK: Writing the script path should be done with webpack
+          document.getElementsByTagName('head')[0].appendChild(link);
+        }
+      })();
+    </script>
+  </head>
+  <body>
     <div id="root"></div>
-    <script src="/dist/js/app.js"></script>
-</body>
+    <script>
+      if (typeof process === 'object') {
+        const scripts = [];
+        if (process.env.NODE_ENV === 'development') {
+          // Dynamically insert the bundled app script in the renderer process
+          const port = 8080;
+          scripts.push(`http://localhost:${port}/dist/renderer.dev.js`);
+        } else {
+          scripts.push('./dist/renderer.prod.js');
+        }
+        console.log(scripts);
+        if (scripts.length) {
+          document.write(
+            scripts
+              .map(script => `<script defer src="${script}"><\/script>`)
+              .join('')
+          );
+        }
+      }
+    </script>
+  </body>
 </html>

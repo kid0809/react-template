@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { BrowserRouter as Router } from 'react-router-dom';
+import { HashRouter as Router } from 'react-router-dom';
 import { hot } from 'react-hot-loader/root';
 import Routes from './routes';
 import './styles/main.scss';

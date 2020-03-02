@@ -2,7 +2,6 @@
 const path = require('path');
 const webpack = require('webpack');
 const Fiber = require('fibers');
-const HtmlWebpackPlugin = require('html-webpack-plugin');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const TerserPlugin = require('terser-webpack-plugin');
@@ -14,14 +13,14 @@ const CompressionPlugin = require('compression-webpack-plugin');
 // webpack 配置
 module.exports = {
     mode: 'production',
-    entry: {
-        app: './src/index.js'
-    },
+    target: 'electron-preload',
+    entry: './src/index.js',
     output: {
         path: path.join(__dirname, '../dist'), // 出口目录，dist文件
-        publicPath: "/dist/",
-        filename: 'js/[name].[chunkhash].js',
-        chunkFilename: 'js/[name].chunk.[chunkhash].js'
+        publicPath: './dist/',
+        filename: 'renderer.prod.js',
+        chunkFilename: '[name].chunk.[chunkhash].js',
+        libraryTarget: 'commonjs2'
     },
     module: {
         rules: [
@@ -80,22 +79,13 @@ module.exports = {
         }
     },
     plugins: [
-        new HtmlWebpackPlugin({
-            template: './public/template.html',
-            filename: 'index.html'
-        }),
         new CleanWebpackPlugin({ verbose: true }),
         new MiniCssExtractPlugin({
-            filename: "css/[name].[contenthash].css",
-            chunkFilename: "css/[name].[contenthash].css"
+            filename: "[name].css",
+            chunkFilename: "[name].[contenthash].css"
         }),
-        new webpack.DefinePlugin({
-            NODE_ENV: JSON.stringify('production')
-        }),
-        new CompressionPlugin({
-            test: new RegExp(
-                '\\.(js|css)$' // 压缩 js 与 css
-            )
+        new webpack.EnvironmentPlugin({
+            NODE_ENV: 'production'
         })
         // new BundleAnalyzerPlugin()
     ],
