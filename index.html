@@ -7,7 +7,7 @@
       (() => {
         if (
           typeof process !== 'object' ||
-          (typeof process === 'object' && !process.env.START_HOT)
+          (typeof process === 'object' && process.env.NODE_ENV !== 'development')
         ) {
           const link = document.createElement('link');
           link.rel = 'stylesheet';
@@ -30,7 +30,6 @@
         } else {
           scripts.push('./dist/renderer.prod.js');
         }
-        console.log(scripts);
         if (scripts.length) {
           document.write(
             scripts

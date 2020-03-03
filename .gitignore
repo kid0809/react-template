@@ -1,6 +1,7 @@
 # compiled output
 /dist
 /release
+/main.prod.js
 
 # dependencies
 /node_modules
