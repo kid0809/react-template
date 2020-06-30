@@ -36,10 +36,10 @@ npm start
 │
 ├── src
 │   ├── components // 组件
-│   │    ├── basic // 基础组件
-│   │    └── business // 业务组件
 │   │
 │   ├── images // 图片文件夹
+│   │
+│   ├── pages // 业务页面
 │   │
 │   ├── Routes // 前端路由相关
 │   │    ├── AuthRoute // 高阶路由组件，拦截逻辑

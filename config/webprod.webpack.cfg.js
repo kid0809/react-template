@@ -76,7 +76,9 @@ module.exports = {
         extensions: ['.js', '.json', '.css'],
         alias: {
             '@root': path.resolve(__dirname, '../'),
-            '@src': path.resolve(__dirname, '../', 'src')
+            '@src': path.resolve(__dirname, '../', 'src'),
+            '@pages': path.resolve(__dirname, '../', 'src', 'pages'),
+            '@components': path.resolve(__dirname, '../', 'src', 'components')
         }
     },
     plugins: [

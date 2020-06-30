@@ -1,11 +1,11 @@
 import React from 'react';
-import { setToken } from '../../../utils/storage';
+import { setToken } from '@src/utils/storage';
 
 class Login extends React.Component {
     login = () => {
         setToken('isLogin', 'true');
         this.props.history.push('/');
-    }
+    };
     render() {
         return (
             <div className="login-wrap">

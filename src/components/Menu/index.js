@@ -6,11 +6,9 @@ const Menu = ({ menus }) => {
     return (
         <div className="menu-wrap">
             <ul style={{ marginTop: '20px' }}>
-                {menus.map(item => (
+                {menus.map((item) => (
                     <li key={item.title} className="menu-item">
-                        <Link to={item.url}>
-                            {item.title}
-                        </Link>
+                        <Link to={item.url}>{item.title}</Link>
                     </li>
                 ))}
             </ul>

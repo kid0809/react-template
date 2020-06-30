@@ -1,19 +1,19 @@
 import { lazy } from 'react';
 
 const LoginComponent = lazy(() =>
-    import(/* webpackChunkName: 'Login' */ '../components/business/Login')
+    import(/* webpackChunkName: 'Login' */ '../pages/Login')
 );
 
 const HomeComponent = lazy(() =>
-    import(/* webpackChunkName: 'Home' */ '../components/business/Home')
+    import(/* webpackChunkName: 'Home' */ '../pages/Home')
 );
 
 const AboutComponent = lazy(() =>
-    import(/* webpackChunkName: 'About' */ '../components/business/About')
+    import(/* webpackChunkName: 'About' */ '../pages/About')
 );
 
 const NoMatchComponent = lazy(() =>
-    import(/* webpackChunkName: 'NoMatch' */ '../components/business/NoMatch')
+    import(/* webpackChunkName: 'NoMatch' */ '../pages/NoMatch')
 );
 
 const routes = [

@@ -21,11 +21,7 @@ class ErrorBoundary extends React.Component {
 
     render() {
         if (this.state.hasError) {
-            return (
-                <div className="error-wrap">
-                    页面崩溃了~
-                </div>
-            );
+            return <div className="error-wrap">页面崩溃了~</div>;
         }
 
         return this.props.children;

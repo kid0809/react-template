@@ -1,6 +1,6 @@
 import React from 'react';
 import { Redirect, Route } from 'react-router-dom';
-import { getToken } from '../utils/storage';
+import { getToken } from '@src/utils/storage';
 
 class AuthRoute extends React.Component {
     componentDidMount() {

@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { BrowserRouter as Router } from 'react-router-dom';
 import { hot } from 'react-hot-loader/root';
-import Routes from './routes';
+import Routes from './Routes';
 import './styles/main.scss';
 
 class App extends Component {

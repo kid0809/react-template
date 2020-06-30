@@ -1,8 +1,8 @@
 import React, { Component, Suspense } from 'react';
 import { Switch, Route, Redirect } from 'react-router-dom';
-import Loading from '@src/components/basic/Loading';
-import ErrorBoundary from '@src/components/business/ErrorBoundary';
-import Layout from '@src/components/basic/Layout';
+import Loading from '@src/components/Loading';
+import ErrorBoundary from '@src/components/ErrorBoundary';
+import Layout from '@src/components/Layout';
 import LayoutContext from '@src/LayoutContext';
 
 import AuthRoute from './AuthRoute';
